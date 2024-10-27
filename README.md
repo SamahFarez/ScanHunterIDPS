@@ -25,7 +25,7 @@ Scan Hunter is a type of an Intrusion Detection and Prevention System (IDPS) des
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Hunter-IDPS.git
+   git clone https://github.com/SamahFarez/ScanHunterIDPS.git
    cd Hunter-IDPS
    ```
 
