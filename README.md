@@ -16,7 +16,7 @@ Scan Hunter is a type of an Intrusion Detection and Prevention System (IDPS) des
 ├── src/
 │   ├── hunter.py           # Core functionality for sniffing and detecting intrusions
 │   ├── hunter_gui.py       # GUI for interacting with the IDPS
-│   └── logging_setup.py     # Logging configuration
+│   └── hunter_logging.py   # Logging configuration
 │
 ├── requirements.txt        # Required Python packages
 └── README.md               # Project documentation
@@ -41,7 +41,7 @@ Scan Hunter is a type of an Intrusion Detection and Prevention System (IDPS) des
    ```
 
 ## Usage
-To start the Hunter IDPS, run the following command in your terminal:
+To start the Scan Hunter IDPS, run the following command in your terminal:
 ```bash
 cd src
 sudo python3 hunter_gui.py
