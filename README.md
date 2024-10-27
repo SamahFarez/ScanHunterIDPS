@@ -1,7 +1,7 @@
 # Scan Hunter: Scanning Detection and Prevention System (SDPS)
 
 ## Overview
-Hunter is an Intrusion Detection and Prevention System (IDPS) designed to monitor network traffic and detect potential port scanning activities. It blocks malicious IP addresses and provides a graphical user interface (GUI) for real-time monitoring and management of the system.
+Scan Hunter is a type of an Intrusion Detection and Prevention System (IDPS) designed to monitor network traffic and detect potential port scanning activities. It blocks malicious IP addresses and provides a graphical user interface (GUI) for real-time monitoring and management of the system.
 
 ## Features
 - **Real-time Packet Sniffing**: Monitors network traffic for potential threats.
