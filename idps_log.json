@@ -1,7 +1,0 @@
-{"timestamp": "2024-10-27T22:00:11.315441", "event_type": "INFO", "message": "Current blocked IPs: []"}
-{"timestamp": "2024-10-27T22:00:11.315569", "event_type": "INFO", "message": "Starting IDPS..."}
-{"timestamp": "2024-10-27T22:00:15.625636", "event_type": "ALERT", "message": "[ALERT] Port scan detected from IP: 192.168.252.106"}
-{"timestamp": "2024-10-27T22:00:15.641484", "event_type": "ACTION", "message": "[ACTION] Blocked IP: 192.168.252.106"}
-{"timestamp": "2024-10-27T22:00:35.288630", "event_type": "ALERT", "message": "[ALERT] Port scan detected from IP: 192.168.252.93"}
-{"timestamp": "2024-10-27T22:00:35.301834", "event_type": "ACTION", "message": "[ACTION] Blocked IP: 192.168.252.93"}
-{"timestamp": "2024-10-27T22:01:06.494420", "event_type": "INFO", "message": "Shutting down IDPS gracefully."}
