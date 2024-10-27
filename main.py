@@ -1,9 +1,12 @@
+#!/usr/bin/env python3
+
 import subprocess
 from scapy.all import sniff, IP, TCP
 from datetime import datetime, timedelta
 import logging
 import time
 import threading
+import sys  # Import sys for exiting the program
 
 # Set up logging
 logging.basicConfig(filename="idps_log.txt", level=logging.INFO, format="%(message)s")
@@ -16,6 +19,7 @@ BLOCK_TIMEOUT = timedelta(minutes=5)
 # Track connections and last alert time
 connection_attempts = {}
 blocked_ips = {}
+running = True  # Variable to control the main loop
 
 # Function to block an IP
 def block_ip(ip_address):
@@ -84,15 +88,32 @@ def check_for_unblocking():
             unblock_ip(ip)
 
 def unblocker_thread():
-    while True:
+    while running:  # Only run while the main loop is active
         check_for_unblocking()
         # Log the current blocked IPs
         logging.info(f"[INFO] Current blocked IPs: {list(blocked_ips.keys())}")
         time.sleep(60)  # Check every minute
 
+def exit_program():
+    global running
+    while running:
+        if input() == 'q':
+            running = False  # Stop the sniffing loop
+
 # Start the unblocker thread
 threading.Thread(target=unblocker_thread, daemon=True).start()
 
+# Start the exit program thread
+threading.Thread(target=exit_program, daemon=True).start()
+
 # Start sniffing packets
-print("Starting IDPS...")
-sniff(prn=packet_handler, store=0)
+print("Starting IDPS... Press 'CTRL+C' to exit.")
+
+# Run the sniffing loop
+try:
+    sniff(prn=packet_handler, store=0)
+except KeyboardInterrupt:
+    print("\nStopping IDPS...")
+
+running = False  # Stop the unblocker thread
+print("Exiting IDPS...")
